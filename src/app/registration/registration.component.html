@@ -1,0 +1,57 @@
+<div class="registration-container">
+  <h2>Employee Registration</h2>
+  <form (ngSubmit)="registerEmployee()" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        [(ngModel)]="employee.fullName"
+        required
+        minlength="3"
+        #fullName="ngModel"
+      />
+      <div *ngIf="fullName.invalid && fullName.touched" class="error">
+        Full Name is required and must be at least 3 characters.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="employee.email"
+        required
+        #email="ngModel"
+      />
+      <div *ngIf="email.invalid && email.touched" class="error">
+        A valid email is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="employee.password"
+        required
+        minlength="6"
+        #password="ngModel"
+      />
+      <div *ngIf="password.invalid && password.touched" class="error">
+        Password is required and must be at least 6 characters.
+      </div>
+    </div>
+
+    <button type="submit" class="button" [disabled]="registerForm.invalid">
+      Register
+    </button>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+  </form>
+</div>

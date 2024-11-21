@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background: linear-gradient(to bottom, #e3f2fd, #ffffff); /* Light blue to white gradient */
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header Section */
+    header {
+      background-color: #0e6369; /* Navy blue */
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 4px solid #e3f2fd;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #0b9168; /* Medium blue */
+      color: #fff;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #aac225; /* Slightly darker blue */
+      transform: scale(1.1);
+    }
+
+    /* Main Content */
+    .content {
+      text-align: center;
+      padding: 40px 20px;
+      flex: 1;
+    }
+
+    .intro-text {
+      font-size: 1.3rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #0288d1; /* Vibrant blue */
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0277bd; /* Slightly darker blue */
+      transform: scale(1.1);
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #004d40; /* Deep teal */
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 4px solid #e3f2fd;
+    }
+
+    footer p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #c8e6c9; /* Soft green */
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-icons a {
+      font-size: 2rem;
+      color: #80cbc4; /* Teal */
+      transition: all 0.3s ease;
+    }
+
+    .footer-icons a:hover {
+      color: #4db6ac; /* Slightly darker teal */
+      transform: scale(1.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .intro-text {
+        font-size: 1.1rem;
+        margin: 20px 15px;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Employee Management System</h1>
+    <nav class="nav-links">
+      
+      
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="content">
+    <h1>Welcome to EMS</h1>
+    <p class="intro-text">
+      The Employee Management System (EMS) streamlines managing employee records, payroll, and attendance.
+      Get started to explore our intuitive features and simplify your workday.
+    </p>
+    <button>
+      <i class="fas fa-play"></i>
+      <a href="/admin" style="color: white;">Get Started</a>
+    </button>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p><strong>About EMS</strong></p>
+    <p>
+      Empowering HR teams with smarter solutions for payroll, attendance tracking, and employee performance management.
+    </p>
+    <div class="footer-icons">
+      <a href="#" title="Employee"><i class="fa fa-users"></i></a>
+      <a href="#" title="About"><i class="fa fa-info-circle"></i></a>
+      <a href="#" title="EMS System"><i class="fa fa-cogs"></i></a>
+      <a href="#" title="Contact"><i class="fa fa-envelope"></i></a>
+      <a href="#" title="Help"><i class="fa fa-question-circle"></i></a>
+    </div>
+    <p>&copy; 2024 Employee Management System. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Employee Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-align: center;
+      background-color: #007bff;
+      padding: 15px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    /* Container Styles */
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .form-group input[type="file"] {
+      padding: 8px;
+    }
+
+    /* Two-Column Layout */
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+      min-width: 48%;
+    }
+
+    /* Submit Button Styles */
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .submit-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+      }
+
+      .form-row .form-group {
+        min-width: 100%;
+      }
+
+      .submit-btn {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Add Employee Details</h1>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+      <!-- First Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" formControlName="firstName" placeholder="Enter first name" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" formControlName="lastName" placeholder="Enter last name" required>
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dateOfBirth">Date of Birth:</label>
+          <input type="date" id="dateOfBirth" formControlName="dateOfBirth" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" placeholder="Enter email" required>
+        </div>
+      </div>
+
+      <!-- Third Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="Enter phone number" required>
+        </div>
+        <div class="form-group">
+          <label for="jobTitle">Job Title:</label>
+          <input type="text" id="jobTitle" formControlName="jobTitle" placeholder="Enter job title" required>
+        </div>
+      </div>
+
+      <!-- Fourth Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dateOfJoining">Date of Joining:</label>
+          <input type="date" id="dateOfJoining" formControlName="dateOfJoining" required>
+        </div>
+        <div class="form-group">
+          <label for="employmentType">Employment Type:</label>
+          <select id="employmentType" formControlName="employmentType" required>
+            <option value="">Select Type</option>
+            <option value="FULL_TIME">Full Time</option>
+            <option value="PART_TIME">Part Time</option>
+            <option value="CONTRACT">Contract</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fifth Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="employmentStatus">Employment Status:</label>
+          <select id="employmentStatus" formControlName="employmentStatus" required>
+            <option value="">Select Status</option>
+            <option value="ACTIVE">Active</option>
+            <option value="INACTIVE">Inactive</option>
+            <option value="TERMINATE">Terminate</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <select id="country" formControlName="country" required>
+            <option value="">Select Country</option>
+            <option value="UNITED_STATES">UNITED STATES</option>
+            <option value="INDIA">INDIA</option>
+            <option value="GERMANY">GERMANY</option>
+            <option value="BRAZIL">BRAZIL</option>
+            <option value="RUSSIA">RUSSIA</option>
+            <option value="EGYPT">EGYPT</option>
+            <option value="FRANCE">FRANCE</option>
+            <option value="SOUTH_AFRICA">SOUTH AFRICA</option>
+            <option value="ITALY">ITALY</option>
+            <option value="AUSTRALIA">AUSTRALIA</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Location Field -->
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" formControlName="location" placeholder="Enter location" required>
+      </div>
+
+      <!-- File Upload Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="image">Profile Image:</label>
+          <input type="file" id="image" formControlName="image" accept=".pdf,.jpg,.png" (change)="onFileSelect($event, 'image')" required>
+        </div>
+        <div class="form-group">
+          <label for="idProof">ID Proof:</label>
+          <input type="file" id="idProof" formControlName="idProof" accept=".pdf,.jpg,.png" (change)="onFileSelect($event, 'idProof')" required>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="employeeForm.invalid" class="submit-btn">Submit Details</button>
+
+    </form>
+  </div>
+
+  <script>
+    function onFileSelect(event, fieldName) {
+      const file = event.target.files[0];
+      if (file) {
+        console.log(`Selected file for ${fieldName}:`, file);
+      }
+    }
+  </script>
+
+</body>
+</html>

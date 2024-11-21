@@ -1,0 +1,15 @@
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #e8fafc;
+  border-radius: 4px;
+  color: #333;
+  background-color: #e8fafc; /* Light blue background */
+}
+
+.form-group input:focus {
+  border-color: #e8fafc; /* Highlight border on focus */
+  outline: none;
+  background-color: #e8fafc; /* Slightly darker blue on focus */
+}

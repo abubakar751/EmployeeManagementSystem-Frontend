@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login</title>
+     <!-- Add your stylesheet if needed -->
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-form">
+        <h2>Employee Login</h2>
+        <form (ngSubmit)="onSubmit()">
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    [(ngModel)]="email" 
+                    placeholder="Enter your email" 
+                    required 
+                    #emailField="ngModel"
+                />
+                <!-- Error message for email -->
+                <div *ngIf="emailField.invalid && emailField.touched" class="error">
+                    Please enter a valid email address.
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    [(ngModel)]="password" 
+                    placeholder="Enter your password" 
+                    required 
+                    #passwordField="ngModel"
+                />
+                <!-- Error message for password -->
+                <div *ngIf="passwordField.invalid && passwordField.touched" class="error">
+                    Password is required.
+                </div>
+            </div>
+
+            <!-- Success or error message based on submission outcome -->
+            <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+            <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+            <!-- Submit Button -->
+            <button
+  type="submit"
+  class="submit-btn"
+  [disabled]="!emailField.valid || !passwordField.valid"
+  (click)="onLogin()"
+>
+  Login
+</button>
+
+        </form>
+    </div>
+</body>
+</html>
